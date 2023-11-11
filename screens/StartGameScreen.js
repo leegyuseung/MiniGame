@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, TextInput, View, Alert } from "react-native";
-import PrimaryButton from "../components/PrimaryButton";
 import Colors from "../constants/color";
+import PrimaryButton from "../components/ui/PrimaryButton";
 
 // 시작하는 화면
 function StartGameScreen({ onPickNumber }) {
