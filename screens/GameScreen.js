@@ -1,9 +1,12 @@
-import { Text, View, StyleSheet, Alert } from "react-native";
+import { View, StyleSheet, Alert } from "react-native";
 import { useState, useEffect } from "react";
-import Title from "../components/ui/Title";
+
 import NumberContainer from "../components/game/NumberContainer";
+import Title from "../components/ui/Title";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Colors from "../constants/color";
+import Card from "../components/ui/Card";
+import InstructionText from "../components/ui/InstructionText";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -61,19 +64,21 @@ function GameScreen({ userNumber, onGameOver }) {
   return (
     <View style={styles.screen}>
       <Title>Opponent`s Guess</Title>
-      <NumberContainer>{currentGuess}</NumberContainer>
-      <View>
-        <Text>Higher or Lower?</Text>
+      <Card>
+        <NumberContainer>{currentGuess}</NumberContainer>
         <View>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-            -
-          </PrimaryButton>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-            +
-          </PrimaryButton>
+          <InstructionText>Higher or Lower?</InstructionText>
+          <View>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+              -
+            </PrimaryButton>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+              +
+            </PrimaryButton>
+          </View>
         </View>
-      </View>
-      <View>{/* Log Rounds */}</View>
+        <View>{/* Log Rounds */}</View>
+      </Card>
     </View>
   );
 }
