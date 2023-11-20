@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   highlight: {
-    fontFamily: "open-sans-bold",
+    // fontFamily: "open-sans-bold",
+    fontWeight: "bold",
     color: Colors.primary500,
   },
 });
