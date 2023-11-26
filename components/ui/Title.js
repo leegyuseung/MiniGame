@@ -16,5 +16,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "black",
     padding: 12,
+    maxWidth: "80%",
+    width: 300, // width가 300이상이면 80%만 사용하게된다.
   },
 });
