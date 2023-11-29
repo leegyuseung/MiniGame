@@ -80,7 +80,7 @@ function GameScreen({ userNumber, onGameOver }) {
     <>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <View style={styles.buttonsContainerWide}>
+        <View>
           <InstructionText style={styles.instructionText}>
             Higher or Lower?
           </InstructionText>
@@ -104,7 +104,7 @@ function GameScreen({ userNumber, onGameOver }) {
   if (width > 500) {
     content = (
       <>
-        <View>
+        <View style={styles.buttonsContainerWide}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
               <Ionicons name="md-remove" size={24} color="yellow" />
